@@ -11,7 +11,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.example.demo.entity.HotelBooking;
 
 public interface HotelBookingRepository extends JpaRepository<HotelBooking, Integer>{
-	public List<HotelBooking> findByUserHash(int userHash);
+	public List<HotelBooking> findByUserEmail(String userEmail);
 	
 	@Modifying
 	@Transactional

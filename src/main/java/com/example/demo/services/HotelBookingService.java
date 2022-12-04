@@ -18,8 +18,8 @@ public class HotelBookingService {
 		return hotelBookingRepo.save(newBooking);
 	}
 	
-	public List<HotelBooking> myBooking(int userHash){
-		return hotelBookingRepo.findByUserHash(userHash);
+	public List<HotelBooking> myBooking(String email){
+		return hotelBookingRepo.findByUserEmail(email);
 	}
 	
 	public int cancelBooking(int id, int userHash) {

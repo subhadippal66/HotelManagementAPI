@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -16,6 +17,8 @@ import com.example.demo.entity.HotelBooking;
 import com.example.demo.services.HotelBookingService;
 import com.example.demo.services.PingService;
 
+
+@CrossOrigin(origins = "*")
 @RestController
 public class MyController {
 
@@ -65,9 +68,9 @@ public class MyController {
 	}
 	
 	@GetMapping("/myBooking")
-	public List<HotelBooking> myBooking(@RequestParam("userHash") int userHash){
+	public List<HotelBooking> myBooking(@RequestParam("email") String email){
 		
-		return this.hotelService.myBooking(userHash);
+		return this.hotelService.myBooking(email);
 		
 	}
 	

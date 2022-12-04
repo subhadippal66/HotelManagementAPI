@@ -16,25 +16,37 @@ public class HotelBooking {
 	private String userName;
 	private String userMobileNo;
 	private String userEmail;
-	private String bookingDate; //YYYY-MM-DD
+	private String checkin; //YYYY-MM-DD
+	private String checkout; //YYYY-MM-DD
+	private String price; //YYYY-MM-DD
 	private int noOfRooms;
 	private int roomType;
 	private int adults;
 	private int children;
-	private int location;
+	private String location;
 	private int paymentMode;
 	private int status;
 	private int status1;
-	public HotelBooking(int id, int userHash, String userName, String userMobileNo, String userEmail,
-			String bookingDate, int noOfRooms, int roomType, int adults, int children, int location, int paymentMode,
-			int status, int status1) {
+	@Override
+	public String toString() {
+		return "HotelBooking [id=" + id + ", userHash=" + userHash + ", userName=" + userName + ", userMobileNo="
+				+ userMobileNo + ", userEmail=" + userEmail + ", checkin=" + checkin + ", checkout=" + checkout
+				+ ", price=" + price + ", noOfRooms=" + noOfRooms + ", roomType=" + roomType + ", adults=" + adults
+				+ ", children=" + children + ", location=" + location + ", paymentMode=" + paymentMode + ", status="
+				+ status + ", status1=" + status1 + "]";
+	}
+	public HotelBooking(int id, int userHash, String userName, String userMobileNo, String userEmail, String checkin,
+			String checkout, String price, int noOfRooms, int roomType, int adults, int children, String location,
+			int paymentMode, int status, int status1) {
 		super();
 		this.id = id;
 		this.userHash = userHash;
 		this.userName = userName;
 		this.userMobileNo = userMobileNo;
 		this.userEmail = userEmail;
-		this.bookingDate = bookingDate;
+		this.checkin = checkin;
+		this.checkout = checkout;
+		this.price = price;
 		this.noOfRooms = noOfRooms;
 		this.roomType = roomType;
 		this.adults = adults;
@@ -43,10 +55,6 @@ public class HotelBooking {
 		this.paymentMode = paymentMode;
 		this.status = status;
 		this.status1 = status1;
-	}
-	public HotelBooking() {
-		super();
-		// TODO Auto-generated constructor stub
 	}
 	public int getId() {
 		return id;
@@ -78,11 +86,23 @@ public class HotelBooking {
 	public void setUserEmail(String userEmail) {
 		this.userEmail = userEmail;
 	}
-	public String getBookingDate() {
-		return bookingDate;
+	public String getCheckin() {
+		return checkin;
 	}
-	public void setBookingDate(String bookingDate) {
-		this.bookingDate = bookingDate;
+	public void setCheckin(String checkin) {
+		this.checkin = checkin;
+	}
+	public String getCheckout() {
+		return checkout;
+	}
+	public void setCheckout(String checkout) {
+		this.checkout = checkout;
+	}
+	public String getPrice() {
+		return price;
+	}
+	public void setPrice(String price) {
+		this.price = price;
 	}
 	public int getNoOfRooms() {
 		return noOfRooms;
@@ -108,10 +128,10 @@ public class HotelBooking {
 	public void setChildren(int children) {
 		this.children = children;
 	}
-	public int getLocation() {
+	public String getLocation() {
 		return location;
 	}
-	public void setLocation(int location) {
+	public void setLocation(String location) {
 		this.location = location;
 	}
 	public int getPaymentMode() {
@@ -132,14 +152,9 @@ public class HotelBooking {
 	public void setStatus1(int status1) {
 		this.status1 = status1;
 	}
-	@Override
-	public String toString() {
-		return "HotelBooking [id=" + id + ", userHash=" + userHash + ", userName=" + userName + ", userMobileNo="
-				+ userMobileNo + ", userEmail=" + userEmail + ", bookingDate=" + bookingDate + ", noOfRooms="
-				+ noOfRooms + ", roomType=" + roomType + ", adults=" + adults + ", children=" + children + ", location="
-				+ location + ", paymentMode=" + paymentMode + ", status=" + status + ", status1=" + status1 + "]";
+	public HotelBooking() {
+		super();
+		// TODO Auto-generated constructor stub
 	}
-	
-		
 	
 }
